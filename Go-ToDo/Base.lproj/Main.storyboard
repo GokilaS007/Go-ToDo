@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Go_ToDo" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="ToDoItems" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -700,18 +701,168 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--AddToDoViewController-->
+        <scene sceneID="7qo-oy-L6e">
+            <objects>
+                <viewController title="AddToDoItem" storyboardIdentifier="AddToDoViewController" id="7wf-jj-4yy" userLabel="AddToDoViewController" customClass="AddToDoViewController" customModule="Go_ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4OZ-d0-4kQ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="44" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NHG-u9-WYV">
+                                <rect key="frame" x="125" y="108" width="200" height="85"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oc6-tq-tzW" userLabel="ToDo TextField">
+                                        <rect key="frame" x="0.0" y="64" width="200" height="21"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="ZO7-Zs-rXd" userLabel="ToDoAddTextField">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zM4-wL-uTF" userLabel="SubmitButton">
+                                        <rect key="frame" x="62" y="-7" width="77" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7uD-pL-3sU" userLabel="Submit">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="submitButtonClicked:" target="7wf-jj-4yy" id="Ab0-iO-vXi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oc6-tq-tzW" firstAttribute="width" secondItem="NHG-u9-WYV" secondAttribute="width" id="CTi-I0-p6x"/>
+                                    <constraint firstAttribute="width" constant="200" id="mPV-oX-xpi"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="NHG-u9-WYV" firstAttribute="centerY" secondItem="4OZ-d0-4kQ" secondAttribute="centerY" id="OAK-8y-W1L"/>
+                            <constraint firstItem="NHG-u9-WYV" firstAttribute="centerX" secondItem="4OZ-d0-4kQ" secondAttribute="centerX" id="feu-k5-ZvC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addToDoTextField" destination="oc6-tq-tzW" id="D3V-H9-WXv"/>
+                    </connections>
+                </viewController>
+                <customObject id="Mex-3I-YL6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611" y="606"/>
+        </scene>
+        <!--ToDoTableViewController-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController title="ToDoTableViewController" id="XfG-lQ-9wD" customClass="ToDoViewController" customModule="Go_ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="256"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-qu-k7S">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="206"/>
+                                <clipView key="contentView" id="8ob-jC-GS1">
+                                    <rect key="frame" x="1" y="1" width="478" height="204"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="0G4-Tk-XtL">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="204"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <size key="intercellSpacing" width="17" height="0.0"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="466" minWidth="10" maxWidth="3.4028234663852886e+38" id="zfX-Hc-qAS">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="F2C-yT-hAf">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="ToDoTableCellView" id="3Xn-Hf-IQo" userLabel="ToDoTable Cell View" customClass="ToDoTableCellView" customModule="Go_ToDo" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="0.0" width="461" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-Xg-JaP" userLabel="ToDoCheckBox">
+                                                                    <rect key="frame" x="8" y="0.0" width="53" height="18"/>
+                                                                    <buttonCell key="cell" type="check" title="item" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Og0-4t-9nH">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="completedButtonClicked:" target="3Xn-Hf-IQo" id="hei-6v-Jii"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="WuB-Xg-JaP" firstAttribute="centerY" secondItem="3Xn-Hf-IQo" secondAttribute="centerY" id="Ubu-90-h7r"/>
+                                                                <constraint firstItem="WuB-Xg-JaP" firstAttribute="leading" secondItem="3Xn-Hf-IQo" secondAttribute="leading" constant="10" id="cOX-kN-zzn"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="completedCheckBox" destination="WuB-Xg-JaP" id="edj-2e-RkC"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="P6D-Oy-32l">
+                                    <rect key="frame" x="1" y="204" width="478" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="h1x-OI-RrS">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Ksv-SA-kjW" userLabel="AddButton">
+                                <rect key="frame" x="440" y="213.5" width="30" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6q0-Un-ztB"/>
+                                    <constraint firstAttribute="width" secondItem="Ksv-SA-kjW" secondAttribute="height" multiplier="1:1" id="Ugs-nT-M5X"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="plus.app" catalog="system" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="BYa-qR-YMe" userLabel="AddButton">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addTodoButtonClicked:" target="XfG-lQ-9wD" id="YgF-Ax-GrU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Pej-qu-k7S" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="45W-RF-NbA"/>
+                            <constraint firstItem="Pej-qu-k7S" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="5k4-LG-E4k"/>
+                            <constraint firstItem="Ksv-SA-kjW" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="RG0-q8-ZeF"/>
+                            <constraint firstAttribute="bottom" secondItem="Pej-qu-k7S" secondAttribute="bottom" id="foO-no-aIR"/>
+                            <constraint firstAttribute="trailing" secondItem="Pej-qu-k7S" secondAttribute="trailing" id="whM-f8-CNT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ksv-SA-kjW" secondAttribute="trailing" constant="10" id="x3R-Va-aB3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="todoTableView" destination="0G4-Tk-XtL" id="psa-qD-sSH"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.app" catalog="system" width="15" height="14"/>
+    </resources>
 </document>
