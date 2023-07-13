@@ -7,10 +7,12 @@
 
 import Cocoa
 
-class ToDoTableCellView: NSTableCellView, ToDoTableCellViewDelegate {
+class ToDoTableCellView: NSTableCellView {
 
     @IBOutlet weak var completedCheckBox: NSButton!
-    
+    @IBAction func todoDeleteItem(_ sender: Any) {
+        delegate?.deletedToDoItem(index: index)
+    }
     var index = -1
     var delegate: ToDoTableCellViewDelegate?
     func configure(todoitems: [ToDoItem], index: Int, delegate: ToDoTableCellViewDelegate? ) {
@@ -24,4 +26,5 @@ class ToDoTableCellView: NSTableCellView, ToDoTableCellViewDelegate {
 }
 
 protocol ToDoTableCellViewDelegate {
+    func deletedToDoItem(index: Int)
 }

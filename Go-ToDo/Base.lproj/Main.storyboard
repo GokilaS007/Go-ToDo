@@ -802,10 +802,26 @@
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
                                                                 </button>
+                                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="x5j-6I-pl2" userLabel="Delete Button">
+                                                                    <rect key="frame" x="411" y="-9" width="30.5" height="38"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="Rhd-MD-7Jr"/>
+                                                                        <constraint firstAttribute="width" secondItem="x5j-6I-pl2" secondAttribute="height" multiplier="1:1" id="lzB-iX-fvv"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="trash" catalog="system" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Nol-cI-oQg" userLabel="Delete Button Cell">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="todoDeleteItem:" target="3Xn-Hf-IQo" id="8gT-L4-YGl"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="WuB-Xg-JaP" firstAttribute="centerY" secondItem="3Xn-Hf-IQo" secondAttribute="centerY" id="Ubu-90-h7r"/>
                                                                 <constraint firstItem="WuB-Xg-JaP" firstAttribute="leading" secondItem="3Xn-Hf-IQo" secondAttribute="leading" constant="10" id="cOX-kN-zzn"/>
+                                                                <constraint firstItem="x5j-6I-pl2" firstAttribute="centerY" secondItem="3Xn-Hf-IQo" secondAttribute="centerY" id="dbF-RE-FbI"/>
+                                                                <constraint firstAttribute="trailing" secondItem="x5j-6I-pl2" secondAttribute="trailing" constant="20" id="zpB-Yq-8oI"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="completedCheckBox" destination="WuB-Xg-JaP" id="edj-2e-RkC"/>
@@ -861,5 +877,6 @@
     </scenes>
     <resources>
         <image name="plus.app" catalog="system" width="15" height="14"/>
+        <image name="trash" catalog="system" width="15" height="17"/>
     </resources>
 </document>

@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class ToDoViewController: NSViewController, ToDoTableCellViewDelegate {
+class ToDoViewController: NSViewController {
 
     @IBOutlet weak var todoTableView: NSTableView!
     var todoitems:[ToDoItem] = [ToDoItem(title: "Gokila", Completed: false)]
@@ -35,13 +35,25 @@ extension ToDoViewController: NSTableViewDelegate {
         guard let todoTableCell = todoTableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ToDoTableCellView"), owner: nil) as? ToDoTableCellView else {
             return nil
         }
-        todoTableCell.configure(todoitems: todoitems , index: row, delegate: self)
+        todoTableCell.index = row
+        todoTableCell.delegate = self
+        todoTableCell.configure(todoitems: todoitems ,index: row, delegate: self)
         return todoTableCell
+    }
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 45.0
     }
 }
 extension ToDoViewController: AddToDoViewControllerDelegate {
     func submitItem(text: String) {
         todoitems.append(ToDoItem(title: text, Completed: false))
+        todoTableView.insertRows(at: IndexSet(integer: todoitems.count - 1), withAnimation: NSTableView.AnimationOptions.slideUp)
+    }
+}
+ 
+extension ToDoViewController: ToDoTableCellViewDelegate {
+    func deletedToDoItem(index: Int) {
+        todoitems.remove(at: index)
         todoTableView.reloadData()
     }
 }
