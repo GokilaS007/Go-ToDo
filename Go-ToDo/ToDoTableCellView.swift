@@ -7,17 +7,21 @@
 
 import Cocoa
 
-class ToDoTableCellView: NSTableCellView {
+class ToDoTableCellView: NSTableCellView, ToDoTableCellViewDelegate {
 
     @IBOutlet weak var completedCheckBox: NSButton!
     
-    @IBAction func completedButtonClicked(_ sender: Any) {
-        delegate?.completedCheckBoxClicked(index: index)
-    }
     var index = -1
     var delegate: ToDoTableCellViewDelegate?
+    func configure(todoitems: [ToDoItem], index: Int, delegate: ToDoTableCellViewDelegate? ) {
+        completedCheckBox.title = todoitems[index].title
+        if todoitems[index].Completed {
+            completedCheckBox.state = .on
+        } else {
+            completedCheckBox.state = .off
+        }
+    }
 }
 
 protocol ToDoTableCellViewDelegate {
-    func completedCheckBoxClicked(index: Int)
 }

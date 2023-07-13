@@ -10,7 +10,8 @@ import Cocoa
 class AddToDoViewController: NSViewController {
     @IBOutlet weak var addToDoTextField: NSTextField!
     @IBAction func submitButtonClicked(_ sender: Any) {
-        var stringValue = addToDoTextField.stringValue
+        
+        let stringValue = addToDoTextField.stringValue
         if stringValue != " " {
             delegate?.submitItem(text: stringValue)
             dismiss(nil)
@@ -20,6 +21,7 @@ class AddToDoViewController: NSViewController {
     }
     var delegate: AddToDoViewControllerDelegate?
 }
+
 protocol AddToDoViewControllerDelegate {
     func submitItem(text: String)
 }

@@ -767,13 +767,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-qu-k7S">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="206"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="204"/>
                                 <clipView key="contentView" id="8ob-jC-GS1">
-                                    <rect key="frame" x="1" y="1" width="478" height="204"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="202"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="0G4-Tk-XtL">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="202"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -797,13 +797,10 @@
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-Xg-JaP" userLabel="ToDoCheckBox">
                                                                     <rect key="frame" x="8" y="0.0" width="53" height="18"/>
-                                                                    <buttonCell key="cell" type="check" title="item" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Og0-4t-9nH">
+                                                                    <buttonCell key="cell" type="check" title="item" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Og0-4t-9nH">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
-                                                                    <connections>
-                                                                        <action selector="completedButtonClicked:" target="3Xn-Hf-IQo" id="hei-6v-Jii"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -821,7 +818,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="P6D-Oy-32l">
-                                    <rect key="frame" x="1" y="204" width="478" height="15"/>
+                                    <rect key="frame" x="1" y="190" width="478" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="h1x-OI-RrS">
@@ -830,7 +827,7 @@
                                 </scroller>
                             </scrollView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Ksv-SA-kjW" userLabel="AddButton">
-                                <rect key="frame" x="440" y="213.5" width="30" height="35"/>
+                                <rect key="frame" x="440" y="211.5" width="30" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="6q0-Un-ztB"/>
                                     <constraint firstAttribute="width" secondItem="Ksv-SA-kjW" secondAttribute="height" multiplier="1:1" id="Ugs-nT-M5X"/>

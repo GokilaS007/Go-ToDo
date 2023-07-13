@@ -7,8 +7,8 @@
 
 import Cocoa
 
-class ToDoViewController: NSViewController {
-   
+class ToDoViewController: NSViewController, ToDoTableCellViewDelegate {
+
     @IBOutlet weak var todoTableView: NSTableView!
     var todoitems:[ToDoItem] = [ToDoItem(title: "Gokila", Completed: false)]
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class ToDoViewController: NSViewController {
         addTodoviewController.delegate = self
     }
 }
+
 extension ToDoViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.todoitems.count
@@ -34,24 +35,13 @@ extension ToDoViewController: NSTableViewDelegate {
         guard let todoTableCell = todoTableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ToDoTableCellView"), owner: nil) as? ToDoTableCellView else {
             return nil
         }
-        todoTableCell.index = row
-        todoTableCell.delegate = self
-        todoTableCell.completedCheckBox.title = todoitems[row].title
+        todoTableCell.configure(todoitems: todoitems , index: row, delegate: self)
         return todoTableCell
     }
 }
 extension ToDoViewController: AddToDoViewControllerDelegate {
     func submitItem(text: String) {
         todoitems.append(ToDoItem(title: text, Completed: false))
-        todoTableView.reloadData()
-    }
-}
-
-extension ToDoViewController: ToDoTableCellViewDelegate {
-    func completedCheckBoxClicked(index: Int) {
-        var todoitemCheck = todoitems[index]
-        todoitemCheck.Completed = !todoitemCheck.Completed
-        todoitems[index] = todoitemCheck
         todoTableView.reloadData()
     }
 }
