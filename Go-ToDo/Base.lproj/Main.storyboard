@@ -766,14 +766,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="256"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-qu-k7S">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="204"/>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="38" horizontalPageScroll="10" verticalLineScroll="38" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-qu-k7S">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="194"/>
                                 <clipView key="contentView" id="8ob-jC-GS1">
-                                    <rect key="frame" x="1" y="1" width="478" height="202"/>
+                                    <rect key="frame" x="1" y="1" width="478" height="192"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="0G4-Tk-XtL">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="202"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="38" rowSizeStyle="automatic" viewBased="YES" id="0G4-Tk-XtL">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="192"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="0.0"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -792,18 +792,18 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="ToDoTableCellView" id="3Xn-Hf-IQo" userLabel="ToDoTable Cell View" customClass="ToDoTableCellView" customModule="Go_ToDo" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="0.0" width="461" height="17"/>
+                                                            <rect key="frame" x="8" y="0.0" width="461" height="38"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-Xg-JaP" userLabel="ToDoCheckBox">
-                                                                    <rect key="frame" x="8" y="0.0" width="53" height="18"/>
+                                                                    <rect key="frame" x="8" y="10" width="53" height="18"/>
                                                                     <buttonCell key="cell" type="check" title="item" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Og0-4t-9nH">
                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
                                                                 </button>
                                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="x5j-6I-pl2" userLabel="Delete Button">
-                                                                    <rect key="frame" x="411" y="-9" width="30.5" height="38"/>
+                                                                    <rect key="frame" x="411" y="1" width="30.5" height="38"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="Rhd-MD-7Jr"/>
                                                                         <constraint firstAttribute="width" secondItem="x5j-6I-pl2" secondAttribute="height" multiplier="1:1" id="lzB-iX-fvv"/>
@@ -843,7 +843,7 @@
                                 </scroller>
                             </scrollView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Ksv-SA-kjW" userLabel="AddButton">
-                                <rect key="frame" x="440" y="211.5" width="30" height="35"/>
+                                <rect key="frame" x="440" y="201.5" width="30" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="6q0-Un-ztB"/>
                                     <constraint firstAttribute="width" secondItem="Ksv-SA-kjW" secondAttribute="height" multiplier="1:1" id="Ugs-nT-M5X"/>

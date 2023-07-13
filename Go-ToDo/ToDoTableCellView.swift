@@ -13,6 +13,7 @@ class ToDoTableCellView: NSTableCellView {
     @IBAction func todoDeleteItem(_ sender: Any) {
         delegate?.deletedToDoItem(index: index)
     }
+    
     var index = -1
     var delegate: ToDoTableCellViewDelegate?
     func configure(todoitems: [ToDoItem], index: Int, delegate: ToDoTableCellViewDelegate? ) {
@@ -28,3 +29,4 @@ class ToDoTableCellView: NSTableCellView {
 protocol ToDoTableCellViewDelegate {
     func deletedToDoItem(index: Int)
 }
+

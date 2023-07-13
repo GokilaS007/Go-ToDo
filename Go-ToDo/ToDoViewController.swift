@@ -52,6 +52,7 @@ extension ToDoViewController: AddToDoViewControllerDelegate {
 }
  
 extension ToDoViewController: ToDoTableCellViewDelegate {
+    
     func deletedToDoItem(index: Int) {
         todoitems.remove(at: index)
         todoTableView.reloadData()

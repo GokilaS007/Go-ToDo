@@ -12,13 +12,14 @@ class AddToDoViewController: NSViewController {
     @IBAction func submitButtonClicked(_ sender: Any) {
         
         let stringValue = addToDoTextField.stringValue
-        if stringValue != " " {
+            if stringValue != " " {
             delegate?.submitItem(text: stringValue)
             dismiss(nil)
         } else {
             return
         }
     }
+    var index = -1
     var delegate: AddToDoViewControllerDelegate?
 }
 
